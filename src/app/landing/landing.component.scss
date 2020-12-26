@@ -1,0 +1,54 @@
+$light-yellow: rgb(255,196,14);
+$yellow: rgb(212,158,74);
+$dark: rgb(47,69,91);
+$white: white;
+$height-header: 100px;
+$height-block: 800px;
+
+h1 {
+    font-weight: 200;
+}
+
+.header, 
+.footer,
+.main div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header, .footer {
+    height: $height-header;
+    background: $light-yellow;
+    color: $white;
+}
+
+.main {
+    min-height: calc(100vh - 200px);
+}
+
+.main div {
+    height: $height-block;
+}
+
+.top, .about-photo, .reason, .form, .map {
+    // height: $height-block;
+    background: $white;
+}
+.promo, .scheme {
+    // height: $height-block;
+    background: $light-yellow;
+    color: $white;
+}
+.about-text, .reviews {
+    background: $dark;
+    color: $white;
+}
+.why-are-we {
+    background: $yellow;
+    color: $white;
+}
+
+.footer {}

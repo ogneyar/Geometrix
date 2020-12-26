@@ -1,0 +1,12 @@
+.center {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(212,158,74);
+    h1 {
+        color: rgb(255, 255, 255);
+    }
+}
