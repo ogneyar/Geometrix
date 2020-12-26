@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+html a:hover {
+  opacity: 0.5;
+}
+
+/*# sourceMappingURL=styles.css.map*/
