@@ -29,16 +29,17 @@ h1 {
     min-height: calc(100vh - 200px);
 }
 
-.main div {
+.main div:not(.top) {
     height: $height-block;
+}
+.top {
+    // height: auto;
 }
 
 .top, .about-photo, .reason, .form, .map {
-    // height: $height-block;
     background: $white;
 }
 .promo, .scheme {
-    // height: $height-block;
     background: $light-yellow;
     color: $white;
 }
@@ -51,4 +52,3 @@ h1 {
     color: $white;
 }
 
-// .footer {}
