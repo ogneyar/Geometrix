@@ -29,7 +29,7 @@ h1 {
     min-height: calc(100vh - 200px);
 }
 
-.main div:not(.top) {
+.main div:not(.top):not(.map) {
     height: $height-block;
 }
 .top {
@@ -52,3 +52,7 @@ h1 {
     color: $white;
 }
 
+.map iframe {
+    width: 100%;
+    height: 600px;
+}
