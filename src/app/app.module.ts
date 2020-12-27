@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 // import { AngularYmaps } from 'angular-ymaps';
 
@@ -12,7 +13,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   declarations: [
     AppComponent,
     LandingComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    PrivacyComponent
   ],
   imports: [
     BrowserModule,

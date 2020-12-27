@@ -3,6 +3,7 @@ $yellow: rgb(212,158,74);
 $dark: rgb(47,69,91);
 $white: white;
 $height-header: 100px;
+$height-footer: 200px;
 $height-block: 800px;
 
 h1 {
@@ -10,7 +11,7 @@ h1 {
 }
 
 .header, 
-.footer,
+// .footer,
 .main div {//:not(.map)
     width: 100%;
     display: flex;
@@ -19,11 +20,59 @@ h1 {
     justify-content: center;
 }
 
-.header, .footer {
-    height: $height-header;
+.header, .footer {    
     background: $light-yellow;
     color: $white;
 }
+.header-background {
+    position: fixed;
+    top: 0;
+    background: rgba(255,196,14,0.6);
+    width: 100%;
+    height: 100px;
+}
+.header {
+    height: $height-header;
+    img {
+        width: 100px;
+        position: fixed;
+        left: 50px;
+    }
+    h1 {
+        position: fixed;
+        top: 30px;
+    }
+}
+@media (max-width: 600px) {
+    .header {
+        img {
+            left: 20px;
+        }
+        h1 {
+            left:150px;
+        }
+    }
+}
+@media (max-width: 475px) {
+    .header {
+        img {
+            left: 5px;
+        }
+        h1 {
+            left:105px;
+        }
+    }
+}
+@media (max-width: 410) {}
+
+.hr {
+    width: 100%;
+    border-top: 1px solid white;
+    border-bottom: 1px solid black;
+    position: fixed;
+    top: 100px;
+}
+
 
 .main {
     min-height: calc(100vh - 200px);
@@ -32,9 +81,11 @@ h1 {
 .main div:not(.top):not(.map) {
     height: $height-block;
 }
+
 .top {
-    // height: auto;
+    overflow: hidden;
 }
+
 
 .top, .about-photo, .reason, .form, .map {
     background: $white;
@@ -55,4 +106,23 @@ h1 {
 .map iframe {
     width: 100%;
     height: 600px;
+}
+
+
+
+.footer {
+    height: $height-footer;
+    position: relative;
+    width: 100%;
+    .director {
+        position: absolute;
+        left: 20px;
+        top: 10px;
+        // padding: 10px;
+    }
+    .privacy {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+    }
 }
