@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+// import { AngularYmaps } from 'angular-ymaps';
+
 @NgModule({
   declarations: [
     AppComponent,

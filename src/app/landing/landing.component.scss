@@ -11,7 +11,7 @@ h1 {
 
 .header, 
 .footer,
-.main div {
+.main div {//:not(.map)
     width: 100%;
     display: flex;
     flex-direction: column;
