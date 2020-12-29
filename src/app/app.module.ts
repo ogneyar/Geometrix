@@ -7,7 +7,6 @@ import { LandingComponent } from './landing/landing.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 
-// import { AngularYmaps } from 'angular-ymaps';
 
 @NgModule({
   declarations: [
