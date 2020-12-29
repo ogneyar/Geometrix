@@ -5,6 +5,7 @@ $white: white;
 $height-header: 100px;
 $height-footer: 200px;
 $height-block: 800px;
+$z-index-header: 10;
 
 h1 {
     font-weight: 200;
@@ -12,7 +13,7 @@ h1 {
 
 .header, 
 // .footer,
-.main div {//:not(.map)
+.main div { //:not(.consultation)
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -30,6 +31,7 @@ h1 {
     background: rgba(255,196,14,0.6);
     width: 100%;
     height: 100px;
+    z-index: $z-index-header;
 }
 .header {
     height: $height-header;
@@ -37,10 +39,12 @@ h1 {
         width: 100px;
         position: fixed;
         left: 50px;
+        z-index: $z-index-header;
     }
     h1 {
         position: fixed;
         top: 30px;
+        z-index: $z-index-header;
     }
 }
 @media (max-width: 600px) {
@@ -63,9 +67,10 @@ h1 {
         }
     }
 }
-@media (max-width: 410) {}
+@media (max-width: 410px) {}
 
 .hr {
+    z-index: $z-index-header;
     width: 100%;
     border-top: 1px solid white;
     border-bottom: 1px solid black;
@@ -87,7 +92,7 @@ h1 {
 }
 
 
-.top, .about-photo, .reason, .form, .map {
+.top, .about-photo, .reason, .consultation, .map {
     background: $white;
 }
 .promo, .scheme {
@@ -101,6 +106,50 @@ h1 {
 .why-are-we {
     background: $yellow;
     color: $white;
+}
+
+.consultation {
+    position: relative;
+    .form {
+        z-index: 1;
+        position: absolute;
+        // left: 200px;
+        // top: 100px;
+        background: rgba(158, 158, 158, 0.4);
+        width: 300px;
+        height: 450px;
+        padding: 20px;
+        h1, h4 {
+            padding: 5px;
+            margin: 5px 20px 0 20px;
+        }
+        input, button {
+            padding: 20px;
+            margin: 20px 20px 0 20px;
+        }
+        button {
+        }
+    }
+    .instrument {
+        // visibility: hidden;
+        position: absolute;
+        left: 50px;
+        bottom: 0;
+    }
+}
+@media (min-width: 1000px) {
+    .consultation {
+        .form {
+            left: 600px;
+            // top: 100px;
+        }
+        .instrument {
+            // visibility: visible;
+            position: absolute;
+            left: 400px;
+            // top: 100px;
+        }
+    }
 }
 
 .map iframe {
