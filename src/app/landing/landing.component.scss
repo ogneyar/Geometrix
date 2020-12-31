@@ -12,7 +12,6 @@ h1 {
 }
 
 .header, 
-// .footer,
 .main div:not(.about-photo):not(.container):not(.card) { //:not(.consultation) //
     width: 100%;
     display: flex;
@@ -111,34 +110,23 @@ h1 {
 }
 
 
+//----------------------------------
+// Привязка футера к подвалу :)
 .main {
     min-height: calc(100vh - 350px);
 }
+//----------------------------------
 
-.main div:not(.top):not(.map):not(.about-photo) {
-    // height: $height-block;
-}
 
+
+// ------------------
+// .top
+// ------------------
 .top {
     overflow: hidden;
-}
-
-
-.top, .about-photo, .reason, .consultation, .map {
     background: $white;
 }
-.promo, .scheme {
-    background: $light-yellow;
-    color: $white;
-}
-.about-text, .reviews {
-    background: $dark;
-    color: $white;
-}
-.why-are-we {
-    background: $yellow;
-    color: $white;
-}
+//----------------------------------
 
 
 // ------------------
@@ -146,12 +134,17 @@ h1 {
 // ------------------
 .promo {
     height: $height-block;
+    background: $light-yellow;
+    color: $white;
 }
+//----------------------------------
+
 
 // ------------------
 // .about-photo
 // ------------------
 .about-photo {
+    background: $white;
     position: relative;
     width: 100%;
     display: flex;    
@@ -166,10 +159,9 @@ h1 {
 .about-photo .container {
     height: 600px;
     // background: rgba(236, 236, 236, 0.5);
-    display: flex;    
+    display: flex;
     justify-content: center;
     align-items: center;
-    
     .card {
         position: relative;
         width: 300px;
@@ -253,8 +245,11 @@ h1 {
 .about-text {
     // height: $height-block;
     height: 400px;
+    background: $dark;
+    color: $white;
 }
 //----------------------------------
+
 
 // ------------------
 // .reason
@@ -262,8 +257,10 @@ h1 {
 .reason {
     // height: $height-block;
     height: 400px;
+    background: $white;
 }
 //----------------------------------
+
 
 // ------------------
 // .why-are-we
@@ -271,10 +268,17 @@ h1 {
 .why-are-we {
     // height: $height-block;
     height: 400px;
+    background: $yellow;
+    color: $white;
 }
 //----------------------------------
 
+
+// ------------------
+// .consultation
+// ------------------
 .consultation {
+    background: $white;
     height: $height-block;
     position: relative;
     .form {
@@ -318,14 +322,44 @@ h1 {
         }
     }
 }
+//----------------------------------
 
-.map {
+
+// ------------------
+// .scheme
+// ------------------
+.scheme {
     // height: $height-block;
+    height: 400px;
+    background: $light-yellow;
+    color: $white;
+}
+//----------------------------------
+
+
+// ------------------
+// .reviews
+// ------------------
+.reviews {
+    // height: $height-block;
+    height: 400px;
+    background: $dark;
+    color: $white;
+}
+//----------------------------------
+
+
+// ------------------
+// .map
+// ------------------
+.map {
+    background: $white;
     iframe {
         width: 100%;
         height: 600px;
     }
 }
+//----------------------------------
 
 
 
