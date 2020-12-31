@@ -13,7 +13,7 @@ h1 {
 
 .header, 
 // .footer,
-.main div { //:not(.consultation)
+.main div:not(.about-photo):not(.container):not(.card) { //:not(.consultation) //
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -59,19 +59,17 @@ h1 {
         top: 50px;
         z-index: $z-index-header;
     }
-    .phone {
+    .phone, .whatsapp {
         position: fixed;
-        top: 20px;
         right: 50px;
         z-index: $z-index-header;
         font-size: 1.5rem;
     }
+    .phone {
+        top: 20px;
+    }
     .whatsapp {
-        position: fixed;
-        top: 80px;
-        right: 50px;
-        z-index: $z-index-header;
-        font-size: 1.5rem;
+        top: 90px;
     }
 }
 @media (max-width: 600px) {
@@ -90,11 +88,18 @@ h1 {
             left: 5px;
         }
         h1 {
-            left:105px;
+            display: none;
         }
     }
 }
-@media (max-width: 410px) {}
+@media (max-width: 410px) {
+    .header {
+        .phone, .whatsapp {
+            right: 10px;
+            font-size: 1.2rem;
+        }
+    }
+}
 
 .hr {
     z-index: $z-index-header;
@@ -107,11 +112,11 @@ h1 {
 
 
 .main {
-    min-height: calc(100vh - 200px);
+    min-height: calc(100vh - 350px);
 }
 
-.main div:not(.top):not(.map) {
-    height: $height-block;
+.main div:not(.top):not(.map):not(.about-photo) {
+    // height: $height-block;
 }
 
 .top {
@@ -135,7 +140,142 @@ h1 {
     color: $white;
 }
 
+
+// ------------------
+// .promo
+// ------------------
+.promo {
+    height: $height-block;
+}
+
+// ------------------
+// .about-photo
+// ------------------
+.about-photo {
+    position: relative;
+    width: 100%;
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+    p {
+        position: absolute;
+        top: 100px;
+        font-size: 2rem;
+    }
+}
+.about-photo .container {
+    height: 600px;
+    // background: rgba(236, 236, 236, 0.5);
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    
+    .card {
+        position: relative;
+        width: 300px;
+        height: 200px;
+        margin: 20px;
+        .face {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: .5s;
+        }
+        .face.face1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            transform-origin: bottom;
+            h3 {
+                text-align: center;
+                font-size: 1.5em;
+            }
+        }
+        .face.face2 {
+            // background: rgba(255, 255, 255, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-origin: top;
+            transform: translateY(100%) rotateX(90deg);
+            .content p {
+                position: absolute;
+                top: 0;
+                font-size: 1rem;
+                padding: 10px;
+            }
+        }
+    }
+    .card:hover .face.face1 {
+        transform: translateY(-100%) rotateX(90deg);
+    }
+    .card:hover .face.face2 {	
+        transform: translateY(0) rotateX(0deg);
+    }
+}
+@media (max-width: 1000px) {
+    .card3 {
+        visibility: hidden;
+        display: none;
+    }
+    .about-photo {
+        .container {
+            height: 500px;
+        }
+        p {
+            top: 50px;
+        }
+    }
+}
+@media (max-width: 700px) {
+    .card2 {
+        visibility: hidden;
+        display: none;
+    }
+    .about-photo {
+        .container {
+            height: 400px;
+        }
+        p {
+            top: 25px;
+        }
+    }
+}
+//----------------------------------
+
+
+// ------------------
+// .about-text
+// ------------------
+.about-text {
+    // height: $height-block;
+    height: 400px;
+}
+//----------------------------------
+
+// ------------------
+// .reason
+// ------------------
+.reason {
+    // height: $height-block;
+    height: 400px;
+}
+//----------------------------------
+
+// ------------------
+// .why-are-we
+// ------------------
+.why-are-we {
+    // height: $height-block;
+    height: 400px;
+}
+//----------------------------------
+
 .consultation {
+    height: $height-block;
     position: relative;
     .form {
         z-index: 1;
@@ -179,9 +319,12 @@ h1 {
     }
 }
 
-.map iframe {
-    width: 100%;
-    height: 600px;
+.map {
+    // height: $height-block;
+    iframe {
+        width: 100%;
+        height: 600px;
+    }
 }
 
 
