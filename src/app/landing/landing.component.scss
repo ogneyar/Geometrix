@@ -2,7 +2,7 @@ $light-yellow: rgb(255,196,14);
 $yellow: rgb(212,158,74);
 $dark: rgb(47,69,91);
 $white: white;
-$height-header: 100px;
+$height-header: 150px;
 $height-footer: 200px;
 $height-block: 800px;
 $z-index-header: 10;
@@ -30,21 +30,48 @@ h1 {
     top: 0;
     background: rgba(255,196,14,0.6);
     width: 100%;
-    height: 100px;
+    height: $height-header;
     z-index: $z-index-header;
 }
 .header {
     height: $height-header;
-    img {
+    .ooo {
+        position: fixed;
+        top: 10px;
+        left: 25px;
+        z-index: $z-index-header;
+        font-size: large;
+    }
+    .logo {
         width: 100px;
         position: fixed;
         left: 50px;
         z-index: $z-index-header;
     }
-    h1 {
+    .foundation {
         position: fixed;
-        top: 30px;
+        top: 120px;
+        left: 25px;
         z-index: $z-index-header;
+    }
+    .services {
+        position: fixed;
+        top: 50px;
+        z-index: $z-index-header;
+    }
+    .phone {
+        position: fixed;
+        top: 20px;
+        right: 50px;
+        z-index: $z-index-header;
+        font-size: 1.5rem;
+    }
+    .whatsapp {
+        position: fixed;
+        top: 80px;
+        right: 50px;
+        z-index: $z-index-header;
+        font-size: 1.5rem;
     }
 }
 @media (max-width: 600px) {
@@ -75,7 +102,7 @@ h1 {
     border-top: 1px solid white;
     border-bottom: 1px solid black;
     position: fixed;
-    top: 100px;
+    top: $height-header;
 }
 
 
