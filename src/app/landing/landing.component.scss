@@ -11,15 +11,6 @@ h1 {
     font-weight: 200;
 }
 
-.header, 
-.main div:not(.about-photo):not(.container):not(.card) { //:not(.consultation) //
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 .header, .footer {
     background: $light-yellow;
     color: $white;
@@ -27,12 +18,18 @@ h1 {
 .header-background {
     position: fixed;
     top: 0;
-    background: rgba(255,196,14,0.6);
+    background: rgb(255,196,14);
+    opacity: 1;
     width: 100%;
     height: $height-header;
     z-index: $z-index-header;
 }
 .header {
+    // width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     height: $height-header;
     .ooo {
         position: fixed;
@@ -123,8 +120,57 @@ h1 {
 // .top
 // ------------------
 .top {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+
     overflow: hidden;
     background: $white;
+    
+    position: relative;
+
+    h3 {
+        padding: 0 15px;
+        background: rgba(189, 189, 189, 0.3);
+        color: rgb(0, 0, 0);
+        position: absolute;
+        top: 120px;
+        // left: 10px;
+        font-size: 2.5rem;
+        border-radius: 10px;
+        border: 2px solid;
+        text-align: center;
+        margin: 15px;
+    }
+    h1 {
+        padding: 0 15px;
+        background: rgba(129, 129, 129, 0.4);
+        color: rgb(255, 255, 255);
+        position: absolute;
+        top: 500px;
+        // left: 10px;
+        font-size: 3rem;
+        border-radius: 10px;
+        border: 2px solid;
+        text-align: center;
+        margin: 15px;
+    }
+}
+@media (max-width: 450px) {
+    .top {
+        // overflow:visible;
+        height: 650px;
+        h3 {
+            top: 80px;
+            font-size: 2rem;
+        }
+        h1 {
+            top: 400px;
+            font-size: 2rem;
+        }
+    }
 }
 //----------------------------------
 
@@ -133,9 +179,17 @@ h1 {
 // .promo
 // ------------------
 .promo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     height: $height-block;
     background: $light-yellow;
     color: $white;
+    visibility: hidden;
+    display: none;
 }
 //----------------------------------
 
@@ -147,7 +201,7 @@ h1 {
     background: $white;
     position: relative;
     width: 100%;
-    display: flex;    
+    display: flex;
     align-items: center;
     justify-content: center;
     p {
@@ -190,14 +244,16 @@ h1 {
             // background: rgba(255, 255, 255, 0.5);
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: center;            
             transform-origin: top;
             transform: translateY(100%) rotateX(90deg);
             .content p {
                 position: absolute;
                 top: 0;
+                left: 0;
                 font-size: 1rem;
                 padding: 10px;
+                // width: 100%;
             }
         }
     }
@@ -243,10 +299,43 @@ h1 {
 // .about-text
 // ------------------
 .about-text {
+    // width: 100%;
+    display: flex;
+    // flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
     // height: $height-block;
-    height: 400px;
+    height: 600px;
     background: $dark;
     color: $white;
+    
+    position: relative;
+    h1 {
+        position: absolute;
+        top: 50px;
+        // left: 50%;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    p {
+        padding: 20px;
+    }
+}
+@media (max-width: 700px) {
+    .about-text-three {
+        display: none;
+    }
+}
+@media (max-width: 500px) {
+    .about-text-two {
+        display: none;
+    }
 }
 //----------------------------------
 
@@ -255,9 +344,17 @@ h1 {
 // .reason
 // ------------------
 .reason {
+    // width: 100%;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+
     // height: $height-block;
     height: 400px;
     background: $white;
+
+    visibility: hidden;
+    display: none;
 }
 //----------------------------------
 
@@ -266,10 +363,18 @@ h1 {
 // .why-are-we
 // ------------------
 .why-are-we {
+    // width: 100%;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+
     // height: $height-block;
     height: 400px;
     background: $yellow;
     color: $white;
+
+    visibility: hidden;
+    display: none;
 }
 //----------------------------------
 
@@ -278,8 +383,14 @@ h1 {
 // .consultation
 // ------------------
 .consultation {
+    // width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     background: $white;
-    height: $height-block;
+    // height: $height-block;
+    height: 600px;
     position: relative;
     .form {
         z-index: 1;
@@ -322,6 +433,17 @@ h1 {
         }
     }
 }
+@media (max-width: 400px) {
+    .consultation {
+        .form {
+            width: 250px;
+            input, button {
+                padding: 15px;
+                margin: 15px 15px 0 15px;
+            }
+        }
+    }
+}
 //----------------------------------
 
 
@@ -329,10 +451,18 @@ h1 {
 // .scheme
 // ------------------
 .scheme {
+    // width: 100%;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+
     // height: $height-block;
     height: 400px;
     background: $light-yellow;
     color: $white;
+
+    visibility: hidden;
+    display: none;
 }
 //----------------------------------
 
@@ -341,10 +471,18 @@ h1 {
 // .reviews
 // ------------------
 .reviews {
+    // width: 100%;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+
     // height: $height-block;
     height: 400px;
     background: $dark;
     color: $white;
+    
+    visibility: hidden;
+    display: none;
 }
 //----------------------------------
 
@@ -375,7 +513,7 @@ h1 {
     }
     .privacy {
         position: absolute;
-        bottom: 20px;
+        bottom: 15px;
         right: 20px;
     }
 }
