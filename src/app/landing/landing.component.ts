@@ -5,8 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 // import { N } from './n';
 // console.log(N);
 
-// "use strict";
-// const nodemailer = require('nodemailer');
+// const smtp = require('./smtp');
+// smtp('hutor_yanin@mail.ru', 'test #2 :)', '<strong>What`s up my friend?</strong>');
 
 
 @Component({
@@ -36,33 +36,6 @@ export class LandingComponent implements OnInit {
     // if (name.value) console.log("name.value = ",name.value)
     // if (phone.value) console.log("phone.value = ",phone.value)
     // if (email.value) console.log("email.value = ",email.value)
-  }
-
-  async onClickSMTP(): Promise<void> {
-    // "use strict";
-    // const nodemailer = require('nodemailer');
-    
-    // let testEmailAccount = await nodemailer.createTestAccount();
-    
-    // let transporter = nodemailer.createTransport({
-    //   host: 'smtp.mail.ru',
-    //   port: 25,
-    //   secure: false,
-    //   auth: {
-    //     user: "ya13th",
-    //     pass: "*******"
-    //   }
-    // });
-    
-    // let result = await transporter.sendMail({
-    //   from: '"Node js" <nodejs@example.com>',
-    //   to: "user@example.com, user@example.com",
-    //   subject: "Message from Node js",
-    //   text: "This message was sent from Node js server.",
-    //   html: "This <i>message</i> was sent from <strong>Node js</strong> server."
-    // });
-    
-    // console.log(result);
   }
 
 
