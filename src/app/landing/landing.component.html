@@ -26,6 +26,25 @@
     <h1>promo</h1>
 </div>
 
+
+<div class="consultation">
+    <form method="GET" action="/" class="form" id="form">
+        <h1>Заполните форму</h1>
+        <h4>чтобы получить бесплатную<br>
+            консультацию специалиста</h4>
+        <input type="hidden" name="login" id="login" value="test" />
+        <input type="text" placeholder="Ваше имя*" name="name" id="name" maxlength="100" />
+        <input type="text" placeholder="Ваш телефон*" name="phone" id="phone" maxlength="100" />
+        <input type="text" placeholder="Ваш Email" name="email" id="email" maxlength="100" />
+        <button (click)="onClickForm()" class="btn" type="button" id="submit">Получить консультацию</button>
+    </form>
+    <img class="instrument" src="assets/instrument.png" alt="instrument">
+
+    <div class="fon" id="fon"></div>
+
+</div>
+
+
 <div class="about-photo">
     <p>Мы предлагаем:</p>
     <div class="container">
@@ -105,26 +124,16 @@
     <h1>why-are-we</h1>
 </div>
 
-<div class="consultation">
-    <form method="GET" action="/" class="form">
-        <h1>Заполните форму</h1>
-        <h4>чтобы получить бесплатную<br>
-            консультацию специалиста</h4>
-        <input type="hidden" name="login" id="login" value="test" />
-        <input type="text" placeholder="Ваше имя*" name="name" id="name" maxlength="100" />
-        <input type="text" placeholder="Ваш телефон*" name="phone" id="phone" maxlength="100" />
-        <input type="text" placeholder="Ваш Email" name="email" id="email" maxlength="100" />
-        <button class="btn" type="submit">Получить консультацию</button>
-    </form>
-    <img class="instrument" src="assets/instrument.png" alt="instrument">
-</div>
+
 
 <div class="scheme">
     <h1>scheme</h1>
 </div>
+
 <div class="reviews">
     <h1>reviews</h1>
 </div>
+
 <div class="map">
     <!-- <h1>map</h1> -->
     <iframe 
@@ -159,5 +168,3 @@
         <!-- <a routerLink="privacy" queryParams="d" fragment="politics" routerLinkActive="activebutton">Политика конфиденциальности</a> -->
     </div>
 </footer>
-
-<!-- <script src="./angular-ymaps.js"></script> -->

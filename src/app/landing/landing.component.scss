@@ -418,7 +418,8 @@ h1 {
     align-items: center;
     justify-content: center;
 
-    background: $white;
+    // background: $white;
+    background: $light-yellow;
     // height: $height-block;
     height: 600px;
     position: relative;
@@ -447,6 +448,17 @@ h1 {
         position: absolute;
         left: 50px;
         bottom: 0;
+    }
+    .fon {
+        z-index: 1000;
+        background: white;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        visibility: hidden;
     }
 }
 @media (min-width: 1000px) {

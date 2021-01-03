@@ -22,6 +22,7 @@
     "@angular/router": "~11.0.1",
     "angular-ymaps": "^0.1.1",
     "express": "^4.17.1",
+    "nodemailer": "^6.4.17",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
@@ -31,7 +32,7 @@
     "@angular/cli": "~11.0.2",
     "@angular/compiler-cli": "~11.0.1",
     "@types/jasmine": "~3.6.0",
-    "@types/node": "^12.11.1",
+    "@types/node": "^12.19.11",
     "codelyzer": "^6.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
