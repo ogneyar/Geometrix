@@ -19,12 +19,8 @@ h1 {
 .header-background {
     position: fixed;
     top: 0;
-<<<<<<< HEAD
     background: rgb(255,196,14);
     opacity: 1;
-=======
-    background: rgba(255,196,14,0.8);
->>>>>>> adfe3f278b6c0ab10a46d4e504b9212b6b3e4d9f
     width: 100%;
     height: $height-header;
     z-index: $z-index-header;
@@ -213,7 +209,6 @@ h1 {
 // .promo
 // ------------------
 .promo {
-<<<<<<< HEAD
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -221,10 +216,6 @@ h1 {
     justify-content: center;
 
     height: $height-block;
-=======
-    // height: $height-block;
-    height: 400px;
->>>>>>> adfe3f278b6c0ab10a46d4e504b9212b6b3e4d9f
     background: $light-yellow;
     color: $white;
     visibility: hidden;
