@@ -3,6 +3,7 @@ $yellow: rgb(212,158,74);
 $dark: rgb(47,69,91);
 $white: white;
 $height-header: 150px;
+$height-header-min: 100px;
 $height-footer: 200px;
 $height-block: 800px;
 $z-index-header: 10;
@@ -18,11 +19,23 @@ h1 {
 .header-background {
     position: fixed;
     top: 0;
+<<<<<<< HEAD
     background: rgb(255,196,14);
     opacity: 1;
+=======
+    background: rgba(255,196,14,0.8);
+>>>>>>> adfe3f278b6c0ab10a46d4e504b9212b6b3e4d9f
     width: 100%;
     height: $height-header;
     z-index: $z-index-header;
+}
+.hr {
+    z-index: $z-index-header;
+    width: 100%;
+    border-top: 1px solid white;
+    border-bottom: 1px solid black;
+    position: fixed;
+    top: $height-header;
 }
 .header {
     // width: 100%;
@@ -70,20 +83,20 @@ h1 {
 }
 @media (max-width: 600px) {
     .header {
-        img {
+        .logo {
             left: 20px;
         }
-        h1 {
+        .services {
             left:150px;
-        }
+        }        
     }
 }
 @media (max-width: 475px) {
     .header {
-        img {
+        .logo {
             left: 5px;
         }
-        h1 {
+        .services {
             display: none;
         }
     }
@@ -96,15 +109,36 @@ h1 {
         }
     }
 }
-
-.hr {
-    z-index: $z-index-header;
-    width: 100%;
-    border-top: 1px solid white;
-    border-bottom: 1px solid black;
-    position: fixed;
-    top: $height-header;
+@media (max-height: 700px) {
+    .header {
+        .ooo, .foundation {
+            display: none;
+        }
+        .services {
+            top: 30px;
+        }
+        .phone {
+            top: 10px;
+        }
+        .whatsapp {
+            top: 45px;
+        }        
+        height: $height-header-min;
+    }
+    .header-background {
+        height: $height-header-min;
+    }
+    .hr {
+        top: $height-header-min;
+    }
+    @media (max-width: 700px) {
+        .services {
+            display: none;
+        }
+    }
 }
+
+
 
 
 //----------------------------------
@@ -179,6 +213,7 @@ h1 {
 // .promo
 // ------------------
 .promo {
+<<<<<<< HEAD
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -186,6 +221,10 @@ h1 {
     justify-content: center;
 
     height: $height-block;
+=======
+    // height: $height-block;
+    height: 400px;
+>>>>>>> adfe3f278b6c0ab10a46d4e504b9212b6b3e4d9f
     background: $light-yellow;
     color: $white;
     visibility: hidden;
@@ -397,7 +436,7 @@ h1 {
         position: absolute;
         // left: 200px;
         // top: 100px;
-        background: rgba(158, 158, 158, 0.4);
+        background: rgba(158, 158, 158, 0.6);
         width: 300px;
         height: 450px;
         padding: 20px;
