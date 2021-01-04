@@ -9,10 +9,10 @@ express().use(express.static('dist'))
     .get('/', (req, res) => res.sendFile(__dirname + '/dist/index.html'))
     .get('/privacy', (req, res) => res.sendFile(__dirname + '/dist/index.html'))
     .get('/api', (req, res) => {
-        if (req.query.name != "") {
-            if (req.query.phone != "") {
+        if ((req.query.name) && (req.query.name != "")) {
+            if ((req.query.phone) && (req.query.phone != "")) {
                 let message = "<strong>Клиенту требуется консультация: <br><center>Имя: " + req.query.name + "<br>Тел: " + req.query.phone;
-                if (req.query.email != "") message += "<br>Почта: " + req.query.email;
+                if ((req.query.email) && (req.query.email != "")) message += "<br>Почта: " + req.query.email;
                 smtp('ya13th@mail.ru', 'Запрос клиента с сайта https://geometrix61.ru', message +'</center></strong>');
                 console.log("smtp message send");
             }
