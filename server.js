@@ -11,9 +11,9 @@ express().use(express.static('dist'))
     .get('/api', (req, res) => {
         if ((req.query.name) && (req.query.name != "")) {
             if ((req.query.phone) && (req.query.phone != "")) {
-                let message = "<strong>Клиенту требуется консультация: <br><center>Имя: " + req.query.name + "<br>Тел: " + req.query.phone;
-                if ((req.query.email) && (req.query.email != "")) message += "<br>Почта: " + req.query.email;
-                smtp('ya13th@mail.ru', 'Запрос клиента с сайта https://geometrix61.ru', message +'</center></strong>');
+                let message = "<h2>Клиенту требуется консультация: <br><br><center>Имя: " + req.query.name + "<br><br>Тел: " + req.query.phone;
+                if ((req.query.email) && (req.query.email != "")) message += "<br><br>Почта: " + req.query.email;
+                smtp('ya13th@mail.ru', 'Запрос клиента с сайта https://geometrix61.ru', message +'</center></h2>');
                 console.log("smtp message send");
             }
         }
