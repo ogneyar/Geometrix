@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { TestService } from './test.service';
+import { HttpClient, HttpHandler } from '@angular/common/http';
+
 // const N = require('./n');
 // import { N } from './n';
 // console.log(N);
-
-// const smtp = require('./smtp');
-// smtp('hutor_yanin@mail.ru', 'test #2 :)', '<strong>What`s up my friend?</strong>');
-
 
 @Component({
   selector: 'app-landing',
@@ -38,6 +37,31 @@ export class LandingComponent implements OnInit {
     // if (email.value) console.log("email.value = ",email.value)
 
     console.log("Нажата кнопка");
+
+    // let httpClient;
+    // let test  = new TestService(httpClient);
+    // let test  =  TestService.get('http://anyurl.com')
+    // test.subscribe(value =>{
+    //     // value - результат
+    //     console.log("value");
+    // },
+    // error => {
+    //     // error - объект ошибки
+    //     console.log("error");
+    // });
+
+    // console.log(TestService.get('http://anyurl.com').subscribe());
+
+
+    // let httpCli = new HttpClient(next: HttpHandler);
+    // httpCli.get('http://anyurl.com').subscribe(value =>{
+    //     // value - результат
+    //     console.log("value");
+    //   },
+    //   error => {
+    //     // error - объект ошибки
+    //     console.log("error");
+    // });
     
   }
 
