@@ -36,6 +36,9 @@ export class LandingComponent implements OnInit {
     // if (name.value) console.log("name.value = ",name.value)
     // if (phone.value) console.log("phone.value = ",phone.value)
     // if (email.value) console.log("email.value = ",email.value)
+
+    console.log("Нажата кнопка");
+    
   }
 
 

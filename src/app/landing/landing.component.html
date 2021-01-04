@@ -28,7 +28,7 @@
 
 
 <div class="consultation">
-    <form method="GET" action="/" class="form" id="form">
+    <form method="GET" action="/api" class="form" id="form">
         <h1>Заполните форму</h1>
         <h4>чтобы получить бесплатную<br>
             консультацию специалиста</h4>
@@ -36,7 +36,7 @@
         <input type="text" placeholder="Ваше имя*" name="name" id="name" maxlength="100" />
         <input type="text" placeholder="Ваш телефон*" name="phone" id="phone" maxlength="100" />
         <input type="text" placeholder="Ваш Email" name="email" id="email" maxlength="100" />
-        <button (click)="onClickForm()" class="btn" type="button" id="submit">Получить консультацию</button>
+        <button (click)="onClickForm()" class="btn" type="submit" id="submit">Получить консультацию</button>
     </form>
     <img class="instrument" src="assets/instrument.png" alt="instrument">
 
