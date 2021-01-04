@@ -666,9 +666,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _landing_landing_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./landing/landing.component */ "JhD/");
-/* harmony import */ var _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./page-not-found/page-not-found.component */ "rQPh");
-/* harmony import */ var _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./privacy/privacy.component */ "TsVY");
-
+/* harmony import */ var _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./privacy/privacy.component */ "TsVY");
 
 
 
@@ -677,9 +675,9 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [
     { path: '', component: _landing_landing_component__WEBPACK_IMPORTED_MODULE_2__["LandingComponent"] },
-    { path: 'privacy', component: _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_4__["PrivacyComponent"] },
-    { path: 'api', redirectTo: '/', pathMatch: 'full' },
-    { path: '**', component: _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_3__["PageNotFoundComponent"] }
+    { path: 'privacy', component: _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_3__["PrivacyComponent"] }
+    // {path: 'api', redirectTo: '/', pathMatch: 'full'},
+    // {path: '**', component: PageNotFoundComponent}
 ];
 class AppRoutingModule {
 }
