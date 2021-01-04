@@ -205,6 +205,89 @@ h1 {
 //----------------------------------
 
 
+
+// ------------------
+// .consultation
+// ------------------
+.consultation {
+    // width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: $white;
+    // background: $light-yellow;
+    // height: $height-block;
+    height: 600px;
+    position: relative;
+    .form {
+        z-index: 1;
+        position: absolute;
+        // left: 200px;
+        // top: 100px;
+        background: rgba(158, 158, 158, 0.6);
+        width: 300px;
+        height: 450px;
+        padding: 20px;
+        h1, h4 {
+            padding: 5px;
+            margin: 5px 20px 0 20px;
+        }
+        input, button {
+            justify-content: center;
+            padding: 20px;
+            margin: 20px 20px 0 20px;
+        }
+        button {
+        }
+    }
+    .instrument {
+        // visibility: hidden;
+        position: absolute;
+        left: 50px;
+        bottom: 0;
+    }
+    .fon {
+        z-index: 1000;
+        background: white;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        visibility: hidden;
+    }
+}
+@media (min-width: 1000px) {
+    .consultation {
+        .form {
+            left: 600px;
+            // top: 100px;
+        }
+        .instrument {
+            // visibility: visible;
+            position: absolute;
+            left: 400px;
+            // top: 100px;
+        }
+    }
+}
+@media (max-width: 400px) {
+    .consultation {
+        .form {
+            width: 250px;
+            input, button {
+                padding: 15px;
+                margin: 15px 15px 0 15px;
+            }
+        }
+    }
+}
+//----------------------------------
+
+
+
 // ------------------
 // .promo
 // ------------------
@@ -228,7 +311,8 @@ h1 {
 // .about-photo
 // ------------------
 .about-photo {
-    background: $white;
+    // background: $white;
+    background: $light-yellow;
     position: relative;
     width: 100%;
     display: flex;
@@ -325,36 +409,160 @@ h1 {
 //----------------------------------
 
 
+
+// ------------------
+// .reason
+// ------------------
+.reason {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // height: $height-block;
+    height: 400px;
+    background: $white;
+
+    // visibility: hidden;
+    // display: none;
+
+    div {
+        margin: 20px;
+    }
+    h1 {
+        position: absolute;
+        top: 50px;
+    }
+    .reason-img-one {
+        position: absolute;
+        bottom: 20px;
+        left: 100px;
+        img {
+            width: 150px;
+            
+        }
+    }
+    .reason-img-two {
+        position: absolute;
+        bottom: -50px;
+        z-index: 1;
+        img {
+            width: 150px;
+        }
+    }
+    .reason-img-three {
+        position: absolute;
+        bottom: 20px;
+        right: 100px;
+        
+        img {
+            width: 150px;
+        }
+    }
+}
+@media (max-width: 750px) {
+    .reason {
+        .reason-img-one {
+            left: 50px;
+        }
+        .reason-img-three {
+            right: 50px;
+        }
+    }
+}
+@media (max-width: 700px) {
+    .reason {
+        .reason-three {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .reason {
+        .reason-img-one {
+            left: 10px;
+        }
+        .reason-img-three {
+            right: 10px;
+        }
+    }
+}
+@media (max-width: 550px) {
+    .reason {
+        .reason-img-one {
+            display: none;
+        }
+        .reason-img-three {
+            display: none;
+        }
+    }
+}
+@media (max-width: 500px) {
+    .reason {
+        .reason-two {
+            display: none;
+        }
+    }
+}
+@media (min-width: 1000px) {
+    .reason {
+        .reason-img-one {
+            left: 200px;
+        }
+        .reason-img-three {
+            right: 200px;
+        }
+    }
+}
+@media (min-width: 1500px) {
+    .reason {
+        .reason-img-one {
+            left: 300px;
+        }
+        .reason-img-three {
+            right: 300px;
+        }
+    }
+}
+//----------------------------------
+
+
+
 // ------------------
 // .about-text
 // ------------------
 .about-text {
-    // width: 100%;
     display: flex;
-    // flex-direction: column;
-    align-items: center;
     justify-content: center;
-
-    padding: 20px;
-
-    // height: $height-block;
+    width: 100%;
+    
     height: 600px;
     background: $dark;
     color: $white;
-    
-    position: relative;
-    h1 {
-        position: absolute;
-        top: 50px;
-        // left: 50%;
-    }
 
-    h3 {
-        text-align: center;
-    }
+    .box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-    p {
         padding: 20px;
+
+        // height: $height-block;
+        
+        position: relative;
+        h1 {
+            position: absolute;
+            top: 80px;
+            // left: 50%;
+        }
+        h3 {
+            text-align: center;
+        }
+        p {
+            padding: 20px;
+        }
     }
 }
 @media (max-width: 700px) {
@@ -367,24 +575,12 @@ h1 {
         display: none;
     }
 }
-//----------------------------------
-
-
-// ------------------
-// .reason
-// ------------------
-.reason {
-    // width: 100%;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-
-    // height: $height-block;
-    height: 400px;
-    background: $white;
-
-    visibility: hidden;
-    display: none;
+@media (min-width: 1000px) {
+    .about-text {
+        .box {
+            width: 80%;
+        }
+    }
 }
 //----------------------------------
 
@@ -407,87 +603,6 @@ h1 {
     display: none;
 }
 //----------------------------------
-
-
-// ------------------
-// .consultation
-// ------------------
-.consultation {
-    // width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    // background: $white;
-    background: $light-yellow;
-    // height: $height-block;
-    height: 600px;
-    position: relative;
-    .form {
-        z-index: 1;
-        position: absolute;
-        // left: 200px;
-        // top: 100px;
-        background: rgba(158, 158, 158, 0.6);
-        width: 300px;
-        height: 450px;
-        padding: 20px;
-        h1, h4 {
-            padding: 5px;
-            margin: 5px 20px 0 20px;
-        }
-        input, button {
-            padding: 20px;
-            margin: 20px 20px 0 20px;
-        }
-        button {
-        }
-    }
-    .instrument {
-        // visibility: hidden;
-        position: absolute;
-        left: 50px;
-        bottom: 0;
-    }
-    .fon {
-        z-index: 1000;
-        background: white;
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        display: none;
-        visibility: hidden;
-    }
-}
-@media (min-width: 1000px) {
-    .consultation {
-        .form {
-            left: 600px;
-            // top: 100px;
-        }
-        .instrument {
-            // visibility: visible;
-            position: absolute;
-            left: 400px;
-            // top: 100px;
-        }
-    }
-}
-@media (max-width: 400px) {
-    .consultation {
-        .form {
-            width: 250px;
-            input, button {
-                padding: 15px;
-                margin: 15px 15px 0 15px;
-            }
-        }
-    }
-}
-//----------------------------------
-
 
 // ------------------
 // .scheme
