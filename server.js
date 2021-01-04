@@ -9,11 +9,11 @@ express().use(express.static('dist'))
     .get('/', (req, res) => res.sendFile(__dirname + '/dist/index.html'))
     .get('/privacy', (req, res) => res.sendFile(__dirname + '/dist/index.html'))
     .get('/api', (req, res) => {
-        if (req.query.name) {
-            if (req.query.phone) {
-                let message = "Требуется консультация: " + req.query.name + " " + req.query.phone;
-                if (req.query.email) message += " " + req.query.email;
-                smtp('ya13th@mail.ru', 'Запрос клиента с сайта https://geometrix61.ru', '<strong><center>'+ message +'</center></strong>');
+        if (req.query.name != "") {
+            if (req.query.phone != "") {
+                let message = "<strong>Клиенту требуется консультация: <br><center>Имя: " + req.query.name + "<br>Тел: " + req.query.phone;
+                if (req.query.email != "") message += "<br>Почта: " + req.query.email;
+                smtp('ya13th@mail.ru', 'Запрос клиента с сайта https://geometrix61.ru', message +'</center></strong>');
                 console.log("smtp message send");
             }
         }
@@ -21,6 +21,7 @@ express().use(express.static('dist'))
         // res.send('message send');
         res.sendFile(__dirname + '/dist/index.html')
     })
+    .get('*', (req, res) => res.sendFile(__dirname + '/dist/index.html'))
     .listen(port, host, () => console.log(`Starting server. Listening on ${ port }`));
 
 

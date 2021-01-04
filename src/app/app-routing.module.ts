@@ -6,9 +6,9 @@ import { PrivacyComponent } from './privacy/privacy.component';
 
 const routes: Routes = [  
   {path: '', component: LandingComponent},
-  {path: 'privacy', component: PrivacyComponent}
-  // {path: 'api', redirectTo: '/', pathMatch: 'full'},
-  // {path: '**', component: PageNotFoundComponent}
+  {path: 'privacy', component: PrivacyComponent},
+  {path: 'api', redirectTo: '/', pathMatch: 'full'},
+  {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
