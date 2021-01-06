@@ -1,6 +1,10 @@
 var express = require('express');
 var	port = process.env.PORT || 80;
 var	host = process.env.HOST || "0.0.0.0";
+let user = process.env.GEO_SMTP_USER
+let pass = process.env.GEO_SMTP_PASS
+// let user = "ya13th"
+// let pass = "********"
 
 const nodemailer = require('nodemailer');
 
@@ -13,12 +17,9 @@ express().use(express.static('dist'))
             if ((req.query.phone) && (req.query.phone != "")) {
                 let message = "<h2>Клиенту требуется консультация: <br><br><center>Имя: " + req.query.name + "<br><br>Тел: " + req.query.phone;
                 if ((req.query.email) && (req.query.email != "")) message += "<br><br>Почта: " + req.query.email;
-                smtp('ya13th@mail.ru', 'Запрос клиента с сайта https://geometrix61.ru', message +'</center></h2>');
-                console.log("smtp message send");
+                smtp('ya13th@mail.ru', 'Запрос клиента с сайта https://geometrix61.ru', message +'</center></h2>');                
             }
         }
-        // console.log(req.query)
-        // res.send('message send');
         res.sendFile(__dirname + '/dist/index.html')
     })
     .get('*', (req, res) => res.sendFile(__dirname + '/dist/index.html'))
@@ -30,19 +31,16 @@ function smtp(email, subject, message) {
         host: 'smtp.mail.ru',
         secure: false,
         port: 25,
-        auth: { 
-            user: 'web-geometrix61', 
-            pass: 'UYruAY3pyy1%' 
-        },
+        auth: { user, pass },
         tls: { rejectUnauthorized: false }
     });
     mailTransport.sendMail({ 
-        from: 'web-geometrix61@mail.ru', 
-        // to: "ya13th@mail.ru",
-        // subject: "subject",
-        // html: "<b>Hello world!!!</b>"
+        from: user + '@mail.ru', 
         to: email,
         subject: subject,
         html: message
-    }, function(err, info) {});
+    }, function(err, info) {
+        if (err) console.log("ERROR: SMTP message NOT send.");
+        else console.log("SMTP message send.");
+    });    
 };
