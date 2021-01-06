@@ -1,10 +1,20 @@
+const fs = require("fs");
+
+let GEO_SMTP_USER
+let GEO_SMTP_PASS;
+try {
+    const data = fs.readFileSync("env.json");
+    GEO_SMTP_USER = JSON.parse(data).GEO_SMTP_USER;
+    GEO_SMTP_PASS = JSON.parse(data).GEO_SMTP_PASS;
+} catch (err) {
+    console.error(err)
+}
+
 var express = require('express');
 var	port = process.env.PORT || 80;
 var	host = process.env.HOST || "0.0.0.0";
-let user = process.env.GEO_SMTP_USER
-let pass = process.env.GEO_SMTP_PASS
-// let user = "ya13th"
-// let pass = "********"
+let user = process.env.GEO_SMTP_USER || GEO_SMTP_USER;
+let pass = process.env.GEO_SMTP_PASS || GEO_SMTP_PASS;
 
 const nodemailer = require('nodemailer');
 

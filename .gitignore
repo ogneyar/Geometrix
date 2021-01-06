@@ -3,6 +3,7 @@
 #    "postinstall": "ng build --output-path dist"
 
 .env
+env.*
 
 # compiled output
 # /dist
