@@ -35,15 +35,28 @@
 
 
 <div class="consultation">
-    <form method="GET" action="/api" class="form" id="form">
+    <form (ngSubmit)="onClickForm()" [formGroup]="form" class="form">
+    <!-- method="GET" action="/api" class="form" id="form"> -->
         <h1>Заполните форму</h1>
         <h4>чтобы получить бесплатную<br>
             консультацию специалиста</h4>
         <!-- <input type="hidden" name="login" id="login" value="test" /> -->
-        <input type="text" placeholder="Ваше имя*" name="name" id="name" maxlength="100" />
+        <!-- <input type="text" placeholder="Ваше имя*" name="name" id="name" maxlength="100" />
         <input type="text" placeholder="Ваш телефон*" name="phone" id="phone" maxlength="100" />
-        <input type="text" placeholder="Ваш Email" name="email" id="email" maxlength="100" />
-        <button (click)="onClickForm()" class="btn" type="submit" id="submit">Получить консультацию</button>
+        <input type="text" placeholder="Ваш Email" name="email" id="email" maxlength="100" /> -->
+
+        <input type="text" placeholder="Ваше имя*" formControlName="name" required maxlength="20">
+        <input type="text" placeholder="Ваш телефон*" formControlName="phone" required maxlength="20">
+        <input type="text" placeholder="Ваш Email" formControlName="email" maxlength="30">
+
+        <button 
+            class="btn" 
+            type="submit"
+            id="submit"
+            [disabled]="form.invalid"
+        >Получить консультацию</button>
+
+        <!-- (click)="onClickForm()" class="btn" type="submit" id="submit">Получить консультацию</button> -->
     </form>
     <img class="instrument" src="assets/instrument.png" alt="instrument">
 
