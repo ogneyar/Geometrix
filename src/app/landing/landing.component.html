@@ -60,9 +60,17 @@
     </form>
     <img class="instrument" src="assets/instrument.png" alt="instrument">
 
-    <div class="fon" id="fon"></div>
-
 </div>
+
+
+<div class="fon" id="fon"></div>
+<div (click)="delete_toast()" class="toast" id="toast">
+    <div class="block">
+        <h1>Сообщение отправленно</h1>
+        <button (click)="delete_toast()">Ясно</button>
+    </div>
+</div>
+
 
 
 <div class="why-are-we">

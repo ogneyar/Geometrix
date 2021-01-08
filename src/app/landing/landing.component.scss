@@ -364,17 +364,7 @@ h1 {
         left: 50px;
         bottom: 0;
     }
-    .fon {
-        z-index: 1000;
-        background: white;
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        display: none;
-        visibility: hidden;
-    }
+    
 }
 @media (min-width: 1000px) {
     .consultation {
@@ -410,6 +400,56 @@ h1 {
 }
 //----------------------------------
 
+
+// TOAST - всплывающее сообщение
+.fon {
+    
+    z-index: 1000;
+    background: white;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+    display: none;
+    // visibility: hidden;
+}
+.toast {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    width: 100%;
+    height: 100%;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: none;
+
+    .block {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 200px;
+        background: rgb(224, 224, 224);
+        border-radius: 5px;
+        opacity: 1;
+        h1 {
+            margin: 10px;
+        }
+        button {
+            font-size: 1.5rem;
+            padding: 5px 10px;
+            margin: 10px;
+        }
+    }
+}
 
 
 // ------------------

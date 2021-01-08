@@ -64,12 +64,30 @@ export class LandingComponent implements OnInit {
 
     console.log("Нажата кнопка");
 
-    console.log(this.form.value.name);
+    // console.log(this.form.value.name);
 
     this.get(this.form.value.name, this.form.value.phone, this.form.value.email);
 
 
+    this.form.setValue({"name":"","phone":"","email":""});
+
+    this.toast();
+
+
   }
 
+  toast(): void {
+    let fon = document.getElementById("fon");
+    let toast = document.getElementById("toast");
+    fon.style.display = "block";
+    toast.style.display = "flex";
+  }
+
+  delete_toast(): void {
+    let fon = document.getElementById("fon");
+    let toast = document.getElementById("toast");
+    fon.style.display = "none";
+    toast.style.display = "none";
+  }
 
 }
