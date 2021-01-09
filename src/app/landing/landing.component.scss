@@ -360,8 +360,7 @@ h1 {
             margin: 20px 20px 0 20px;
         }
         button {
-            // background: rgb(173, 173, 173);
-            // color: white;
+            cursor: pointer;
             border-top-right-radius: 10px;
             border-bottom-left-radius: 10px;
         }
@@ -521,18 +520,21 @@ h1 {
         font-size: 2rem;
     }
     #card1 {
+        // cursor: pointer;
         display: block;
         // visibility: visible;
         // transition: .5s;
         // opacity: 1;
     }
     #card2 {
+        // cursor: pointer;
         display: block;
         // visibility: visible;
         // transition: .5s;
         // opacity: 1;
     }
     #card3 {
+        // cursor: pointer;
         display: block;
         // visibility: visible;
         // transition: .5s;
