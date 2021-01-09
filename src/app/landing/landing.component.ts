@@ -87,17 +87,17 @@ export class LandingComponent implements OnInit {
   }
 
 
-  arrowLeft(): void {
-    let card1 = document.getElementById("card1");
-    let card2 = document.getElementById("card2");
-    let card3 = document.getElementById("card3");
+  arrowLeft(id1 = "card1", id2 = "card2", id3 = "card3", middleWidth = 700): void {
+    let card1 = document.getElementById(id1);
+    let card2 = document.getElementById(id2);
+    let card3 = document.getElementById(id3);
 
     // card1.style.transitionDelay = "2s";
     // card2.style.transitionDelay = "2s";
     // card3.style.transitionDelay = "2s";
 
     if (!card1.style.display) { // если это первое нажатие на кнопку
-      if (window.innerWidth > 700) { // если на экране две карточки (1 и 2)
+      if (window.innerWidth > middleWidth) { // если на экране две карточки (1 и 2)
         card1.style.display = "none";
         // card1.style.visibility = "hidden";
         // card1.style.opacity = "0";
@@ -119,7 +119,7 @@ export class LandingComponent implements OnInit {
         // card3.style.opacity = "1";
       }
     }else { // если это НЕ первое нажатие на кнопку
-      if (window.innerWidth > 700) { // если на экране две карточки, узнаём какие
+      if (window.innerWidth > middleWidth) { // если на экране две карточки, узнаём какие
         if (card1.style.display == "none") { // если 1 спрятана
           card1.style.display = "block"; //  показываем её
           // card1.style.visibility = "visible";
@@ -170,13 +170,13 @@ export class LandingComponent implements OnInit {
   } // end arrowLeft()
 
 
-  arrowRight(): void {
-    let card1 = document.getElementById("card1");
-    let card2 = document.getElementById("card2");
-    let card3 = document.getElementById("card3");
+  arrowRight(id1 = "card1",id2 = "card2",id3 = "card3", middleWidth = 700): void {
+    let card1 = document.getElementById(id1);
+    let card2 = document.getElementById(id2);
+    let card3 = document.getElementById(id3);
 
     if (!card1.style.display) { // если это первое нажатие на кнопку
-      if (window.innerWidth > 700) { // если на экране две карточки (1 и 2)
+      if (window.innerWidth > middleWidth) { // если на экране две карточки (1 и 2)
         card1.style.display = "none"; // прячем первую
         card2.style.display = "block";
         card3.style.display = "block"; // показываем первую
@@ -186,7 +186,7 @@ export class LandingComponent implements OnInit {
         card3.style.display = "none";
       }
     }else { // если это НЕ первое нажатие на кнопку
-      if (window.innerWidth > 700) { // если на экране две карточки, узнаём какие
+      if (window.innerWidth > middleWidth) { // если на экране две карточки, узнаём какие
         if (card1.style.display == "none") { // если 1 спрятана
           card1.style.display = "block"; //  показываем её
           card2.style.display = "block";
@@ -211,5 +211,14 @@ export class LandingComponent implements OnInit {
     }
 
   } // end arrowRight()
+
+  
+  arrowLeftTwo(): void {
+    this.arrowLeft("text1", "text2", "text3", 525)
+  }
+
+  arrowRightTwo(): void {
+    this.arrowRight("text1", "text2", "text3", 525)
+  }
 
 }

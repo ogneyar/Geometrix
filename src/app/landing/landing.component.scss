@@ -819,6 +819,37 @@ h1 {
     background: $dark;
     color: $white;
 
+    position: relative;
+
+    .arrow-left {
+        z-index: 2;
+        position: absolute;
+        top: 40%;
+        left: 0;
+        opacity: 0.5;
+
+        display: none;
+
+        img {
+            width: 50px;
+            cursor: pointer;
+        }        
+    }
+    .arrow-right {
+        z-index: 2;
+        position: absolute;
+        top: 40%;
+        right: 0;
+        opacity: 0.5;
+
+        display: none;
+
+        img {
+            width: 50px;
+            cursor: pointer;
+        }        
+    }
+
     .box {
         display: flex;
         align-items: center;
@@ -840,16 +871,58 @@ h1 {
         p {
             padding: 20px;
         }
+
+        #text1 {
+            display: block;
+        }
+        #text2 {
+            display: block;
+        }
+        #text3 {
+            display: block;
+        }
     }
 }
-@media (max-width: 700px) {
-    .about-text-three {
-        display: none;
+@media (max-width: 700px) {    
+    .about-text {
+        .box {            
+            #text1 {
+                display: block;
+            }
+            #text2 {
+                display: block;
+            }
+            #text3 {
+                display: none;
+            }
+        }
+        .arrow-left {    
+            display: block;
+        }
+        .arrow-right {    
+            display: block;
+        }
     }
 }
-@media (max-width: 500px) {
-    .about-text-two {
-        display: none;
+@media (max-width: 525px) {
+    .about-text {
+        .box {
+            #text1 {
+                display: block;
+            }    
+            #text2 {
+                display: none;
+            }            
+            #text3 {
+                display: none;
+            }            
+        }
+        .arrow-left {    
+            display: block;
+        }
+        .arrow-right {    
+            display: block;
+        }
     }
 }
 @media (min-width: 1000px) {
