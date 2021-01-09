@@ -63,7 +63,6 @@
 </div>
 
 
-<div class="fon" id="fon"></div>
 <div (click)="delete_toast()" class="toast" id="toast">
     <div class="block">
         <h1>Сообщение отправленно</h1>
@@ -93,7 +92,7 @@
 <div class="about-photo">
     <p>Мы предлагаем:</p>
     <div class="container">
-        <div class="card card1">
+        <div class="card card1" id="card1">
             <div class="face face1">
                 <div class="content">
                     <img src="assets/about-photo-one.jpg" alt="one">
@@ -106,7 +105,7 @@
                 </div>
             </div>
         </div>
-        <div class="card card2">
+        <div class="card card2" id="card2">
             <div class="face face1">
                 <div class="content">
                     <img src="assets/about-photo-two.jpg" alt="two">
@@ -119,7 +118,7 @@
                 </div>
             </div>
         </div>
-        <div class="card card3">
+        <div class="card card3" id="card3">
             <div class="face face1">
                 <div class="content">
                     <img src="assets/about-photo-three.jpg" alt="three">
@@ -133,6 +132,14 @@
             </div>
         </div>
     </div>
+
+    <div (click)="arrowLeft()" class="arrow-left">
+        <img src="assets/img/buttons/arrow-left.png" alt="arrow-left">
+    </div>
+    <div (click)="arrowRight()" class="arrow-right">
+        <img src="assets/img/buttons/arrow-right.png" alt="arrow-right">
+    </div>
+
 </div>
 
 

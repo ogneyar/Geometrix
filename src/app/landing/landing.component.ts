@@ -48,7 +48,7 @@ export class LandingComponent implements OnInit {
         forbiddenNameValidator(/http/i),
         forbiddenNameValidator(/www/i)
       ])
-    });
+    });    
   }
 
   get(name, phone, email = ""): void {
@@ -76,18 +76,140 @@ export class LandingComponent implements OnInit {
 
   }
 
-  toast(): void {
-    let fon = document.getElementById("fon");
-    let toast = document.getElementById("toast");
-    fon.style.display = "block";
+  toast(): void {    
+    let toast = document.getElementById("toast");    
     toast.style.display = "flex";
   }
 
-  delete_toast(): void {
-    let fon = document.getElementById("fon");
-    let toast = document.getElementById("toast");
-    fon.style.display = "none";
+  delete_toast(): void {    
+    let toast = document.getElementById("toast");    
     toast.style.display = "none";
   }
+
+
+  arrowLeft(): void {
+    let card1 = document.getElementById("card1");
+    let card2 = document.getElementById("card2");
+    let card3 = document.getElementById("card3");
+
+    // card1.style.transitionDelay = "2s";
+    // card2.style.transitionDelay = "2s";
+    // card3.style.transitionDelay = "2s";
+
+    if (!card1.style.display) { // если это первое нажатие на кнопку
+      if (window.innerWidth > 700) { // если на экране две карточки (1 и 2)
+        card1.style.display = "none";
+        // card1.style.visibility = "hidden";
+        // card1.style.opacity = "0";
+        card2.style.display = "block";
+        // card2.style.visibility = "visible";
+        // card2.style.opacity = "1";
+        card3.style.display = "block";
+        // card3.style.visibility = "visible";
+        // card3.style.opacity = "1";
+      }else { // если на экране одна карточка (1)
+        card1.style.display = "none";
+        // card1.style.visibility = "hidden";
+        // card1.style.opacity = "0";
+        card2.style.display = "none";
+        // card2.style.visibility = "hidden";
+        // card2.style.opacity = "0";
+        card3.style.display = "block";
+        // card3.style.visibility = "visible";
+        // card3.style.opacity = "1";
+      }
+    }else { // если это НЕ первое нажатие на кнопку
+      if (window.innerWidth > 700) { // если на экране две карточки, узнаём какие
+        if (card1.style.display == "none") { // если 1 спрятана
+          card1.style.display = "block"; //  показываем её
+          // card1.style.visibility = "visible";
+          // card1.style.opacity = "1";
+          card2.style.display = "block";
+          // card2.style.visibility = "visible";
+          // card2.style.opacity = "1";
+          card3.style.display = "none"; // прячем 3
+          // card3.style.visibility = "hidden";
+          // card3.style.opacity = "0";
+        }else { // если 1 видна, значит 3 спрятана
+          card1.style.display = "none"; // прячем 1
+          // card1.style.visibility = "hidden";
+          // card1.style.opacity = "0";
+          card2.style.display = "block";
+          // card2.style.visibility = "visible";
+          // card2.style.opacity = "1";
+          card3.style.display = "block"; //  показываем 3
+          // card3.style.visibility = "visible";
+          // card3.style.opacity = "1";
+        }
+      }else { // если на экране одна карточка, узнаём какая
+        if (card1.style.display == "block") { // если 1 
+          card1.style.display = "none"; // то прячем её
+          // card1.style.visibility = "hidden";
+          // card1.style.opacity = "0";
+          card3.style.display = "block"; //  показываем 3
+          // card3.style.visibility = "visible";
+          // card3.style.opacity = "1";
+        }else if (card2.style.display == "block") { // если 2 
+          card2.style.display = "none";  // то прячем её
+          // card2.style.visibility = "hidden";
+          // card2.style.opacity = "0";
+          card1.style.display = "block"; //  показываем 1        
+          // card1.style.visibility = "visible";  
+          // card1.style.opacity = "1";
+        }else { // если 3          
+          card3.style.display = "none"; // то прячем её
+          // card3.style.visibility = "hidden";
+          // card3.style.opacity = "0";
+          card2.style.display = "block"; //  показываем 2   
+          // card2.style.visibility = "visible";   
+          // card2.style.opacity = "1";    
+        }
+      }
+    }   
+  
+  } // end arrowLeft()
+
+
+  arrowRight(): void {
+    let card1 = document.getElementById("card1");
+    let card2 = document.getElementById("card2");
+    let card3 = document.getElementById("card3");
+
+    if (!card1.style.display) { // если это первое нажатие на кнопку
+      if (window.innerWidth > 700) { // если на экране две карточки (1 и 2)
+        card1.style.display = "none"; // прячем первую
+        card2.style.display = "block";
+        card3.style.display = "block"; // показываем первую
+      }else { // если на экране одна карточка (1)
+        card1.style.display = "none"; // прячем первую
+        card2.style.display = "block"; // показываем вторую
+        card3.style.display = "none";
+      }
+    }else { // если это НЕ первое нажатие на кнопку
+      if (window.innerWidth > 700) { // если на экране две карточки, узнаём какие
+        if (card1.style.display == "none") { // если 1 спрятана
+          card1.style.display = "block"; //  показываем её
+          card2.style.display = "block";
+          card3.style.display = "none"; // прячем 3
+        }else { // если 1 видна, значит 3 спрятана
+          card1.style.display = "none"; // прячем 1
+          card2.style.display = "block";
+          card3.style.display = "block"; //  показываем 3
+        }
+      }else { // если на экране одна карточка, узнаём какая
+        if (card1.style.display == "block") { // если 1 
+          card1.style.display = "none"; // то прячем её
+          card2.style.display = "block"; //  показываем 2
+        }else if (card2.style.display == "block") { // если 2 
+          card2.style.display = "none";  // то прячем её
+          card3.style.display = "block"; //  показываем 3 
+        }else { // если 3          
+          card3.style.display = "none"; // то прячем её
+          card1.style.display = "block"; //  показываем 1   
+        }
+      }
+    }
+
+  } // end arrowRight()
 
 }
