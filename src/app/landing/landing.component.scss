@@ -701,7 +701,7 @@ h1 {
     justify-content: center;
 
     // height: $height-block;
-    height: 400px;
+    height: 600px;
     // background: $white;
     background: $light-yellow;
     color: $dark;
@@ -710,11 +710,20 @@ h1 {
     // display: none;
 
     div {
-        margin: 20px;
+        margin: 10px;
+        h3 {
+            padding: 10px;
+            // text-align: center;
+        }
+        p {
+            padding: 0 10px;
+        }
     }
     h1 {
         position: absolute;
         top: 50px;
+        padding: 10px;
+        text-align: center;
     }
     .reason-img-one {
         position: absolute;
