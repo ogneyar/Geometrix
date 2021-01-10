@@ -18,9 +18,10 @@ h1 {
     font-weight: 200;
 }
 
-.header, .footer {
+.header {
     background: $light-yellow;
     color: $white;
+    // color: $dark;
 }
 .header-background {
     position: fixed;
@@ -458,7 +459,8 @@ h1 {
     padding: 50px;
     min-height: 400px;
     background: $light-yellow;
-    color: $white;
+    // color: $white;
+    color: $dark;
     h1 {
         padding: 20px;
     }
@@ -702,6 +704,7 @@ h1 {
     height: 400px;
     // background: $white;
     background: $light-yellow;
+    color: $dark;
 
     // visibility: hidden;
     // display: none;
@@ -992,6 +995,9 @@ h1 {
 
 
 .footer {
+    background: $light-yellow;
+    color: $white;
+    // color: $dark;
     height: $height-footer;
     position: relative;
     width: 100%;
