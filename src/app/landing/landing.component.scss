@@ -327,7 +327,7 @@ h1 {
 
 
 // ------------------
-// .consultation
+// .consultation      Заполните форму
 // ------------------
 .consultation {
     // width: 100%;
@@ -372,19 +372,25 @@ h1 {
         left: 50px;
         bottom: 0;
     }
-    
+    .image2 {
+        position: absolute;
+        right: 100px;
+        top: 50px;
+        width: 150px;
+    }
 }
 @media (min-width: 1000px) {
     .consultation {
         .form {
             left: 600px;
-            // top: 100px;
         }
         .instrument {
-            // visibility: visible;
             position: absolute;
             left: 400px;
-            // top: 100px;
+        }
+        .image2 {
+            left: 100px;
+            top: 50px;
         }
     }
 }
@@ -449,7 +455,7 @@ h1 {
 
 
 // ------------------
-// .why-are-we
+// .why-are-we         О компании
 // ------------------
 .why-are-we {
     display: flex;
@@ -461,17 +467,42 @@ h1 {
     background: $light-yellow;
     // color: $white;
     color: $dark;
+    position: relative;
     h1 {
-        padding: 20px;
+        margin: 0 0 20px 0;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background: $white;
     }
     p {
         font-size: 1.2rem;
+    }
+    .image1 {
+        position: absolute;
+        top: -70px;
+        right: 10px;
+        // background: $white;
+        width: 100px;
+    }
+}
+@media (min-width: 1200px) {
+    .why-are-we { 
+        .image1 {
+            top: -100px;
+        }
     }
 }
 @media (min-width: 1000px) {
     .why-are-we { 
         div {
             width: 70%;
+        }
+    }
+}
+@media (min-width: 800px) {
+    .why-are-we {
+        .image1 {
+            right: 100px;
         }
     }
 }
@@ -482,6 +513,13 @@ h1 {
             padding-bottom: 50px;
         }
     }    
+}
+@media (max-width: 370px) {
+    .why-are-we {
+        .image1 {
+            display: none;
+        }
+    }
 }
 //----------------------------------
 
@@ -506,7 +544,7 @@ h1 {
 
 
 // ------------------
-// .about-photo
+// .about-photo        Мы предлагаем:
 // ------------------
 .about-photo {
     background: $white;
@@ -516,31 +554,24 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    p {
+    h1 {
         position: absolute;
-        top: 100px;
-        font-size: 2rem;
+        top: 30px;
+        // font-size: 2rem;
+        background: $light-yellow;
+        color: $white;
+        border-radius: 5px;
+        padding: 5px 10px;
+        z-index: 1;
     }
     #card1 {
-        // cursor: pointer;
         display: block;
-        // visibility: visible;
-        // transition: .5s;
-        // opacity: 1;
     }
     #card2 {
-        // cursor: pointer;
         display: block;
-        // visibility: visible;
-        // transition: .5s;
-        // opacity: 1;
     }
     #card3 {
-        // cursor: pointer;
         display: block;
-        // visibility: visible;
-        // transition: .5s;
-        // opacity: 1;
     }
     .arrow-left {
         z-index: 2;
@@ -569,6 +600,12 @@ h1 {
             width: 50px;
             cursor: pointer;
         }        
+    }
+    .image3 {
+        position: absolute;
+        top: -30px;
+        left: 40px;
+        width: 150px;
     }
 }
 .about-photo .container {
@@ -622,24 +659,18 @@ h1 {
         transform: translateY(0) rotateX(0deg);
     }
 }
-@media (max-width: 1000px) {    
+@media (max-width: 1000px) {
     .about-photo {
-        .container {            
+        .container {
             height: 500px;
             #card1 {
                 display: block;
-                // visibility: visible;
-                // opacity: 1;
             }
             #card2 {
                 display: block;
-                // visibility: visible;
-                // opacity: 1;
             }
             #card3 {
                 display: none;
-                // visibility: hidden;
-                // opacity: 0;
             }
         }
         p {
@@ -654,23 +685,17 @@ h1 {
     }
 }
 @media (max-width: 700px) {    
-    .about-photo {        
+    .about-photo {
         .container {
             height: 400px;
             #card1 {
                 display: block;
-                // visibility: visible;
-                // opacity: 1;
             }
             #card2 {
                 display: none;
-                // visibility: hidden;
-                // opacity: 0;
             }
             #card3 {
                 display: none;
-                // visibility: hidden;
-                // opacity: 0;
             }
         }
         p {
@@ -682,16 +707,32 @@ h1 {
         .arrow-right {    
             display: block;
         }
+        .image3 {
+            left: 0;
+        }
     }
 }
-
+@media (max-width: 700px) {
+    .about-photo {
+        .image3 {
+            width: 100px;
+        }
+    }
+}
+@media (max-width: 450px) {
+    .about-photo {
+        .image3 {
+            top: -50px;
+        }
+    }
+}
 
 //----------------------------------
 
 
 
 // ------------------
-// .reason
+// .reason            Почему Вы должны выбрать именно нас:
 // ------------------
 .reason {
     position: relative;
@@ -699,31 +740,44 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-
     // height: $height-block;
     height: 600px;
     // background: $white;
     background: $light-yellow;
     color: $dark;
-
-    // visibility: hidden;
-    // display: none;
-
-    div {
-        margin: 10px;
-        h3 {
-            padding: 10px;
-            // text-align: center;
-        }
-        p {
-            padding: 0 10px;
+    .box {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 150px;
+        div {
+            margin: 10px;
+            width: 33%;
+            height: 50px;
+            h3 {
+                padding: 10px;
+                font-size: 1.5rem;
+                // background: green;
+                background: $dark;
+                color: $white;
+            }
+            p {
+                padding: 0 10px;
+                font-size: 1.2rem;
+                background: $white;
+            }
         }
     }
     h1 {
         position: absolute;
         top: 50px;
-        padding: 10px;
+        padding: 5px 10px;
         text-align: center;
+        background: $dark;
+        color: $white;
+        border-radius: 5px;
     }
     .reason-img-one {
         position: absolute;
@@ -731,12 +785,11 @@ h1 {
         left: 100px;
         img {
             width: 150px;
-            
         }
     }
     .reason-img-two {
         position: absolute;
-        bottom: -50px;
+        bottom: -30px;
         z-index: 1;
         img {
             width: 150px;
@@ -764,8 +817,22 @@ h1 {
 }
 @media (max-width: 700px) {
     .reason {
-        .reason-three {
-            display: none;
+        .box {
+            display: block;
+            position: unset;
+            div {
+                width: 95%;
+                height: 95%;
+            }
+        }
+        div {
+            margin: 5px;
+            h3 {
+                padding: 0 10px;
+            }
+        }
+        .reason-img-one, .reason-img-three {
+            bottom: 5px;
         }
     }
 }
@@ -780,8 +847,19 @@ h1 {
         }
     }
 }
-@media (max-width: 550px) {
+@media (max-width: 600px) {
+    .reason { 
+        h1 {
+            top: 20px;
+        }
+    }
+}
+@media (max-width: 570px) {
     .reason {
+        h1 {
+            top: 10px;
+            line-height: 1.8rem;
+        }
         .reason-img-one {
             display: none;
         }
@@ -790,10 +868,31 @@ h1 {
         }
     }
 }
-@media (max-width: 500px) {
+@media (max-width: 420px) {
+    .reason { 
+        height: 650px;
+        h1 {
+            top: 10px;
+            padding: 5px;
+            line-height: 1.5rem;
+        }
+        .reason-img-two {
+            img {
+                width: 100px;
+            }
+        }
+    }
+}
+@media (max-width: 350px) {
     .reason {
-        .reason-two {
-            display: none;
+        height: 700px;
+        h1 {
+            // line-height: 1.5rem;
+        }
+        .reason-img-two {
+            img {
+                // width: 80px;
+            }
         }
     }
 }
@@ -801,9 +900,23 @@ h1 {
     .reason {
         .reason-img-one {
             left: 200px;
+            img {
+                width: 180px;
+            }
+        }
+        .reason-img-two {
+            img {
+                width: 180px;
+            }
         }
         .reason-img-three {
             right: 200px;
+            img {
+                width: 180px;
+            }
+        }
+        .box {
+            width: 80%;
         }
     }
 }
@@ -811,9 +924,23 @@ h1 {
     .reason {
         .reason-img-one {
             left: 300px;
+            img {
+                width: 250px;
+            }
+        }
+        .reason-img-two {
+            img {
+                width: 250px;
+            }
         }
         .reason-img-three {
             right: 300px;
+            img {
+                width: 250px;
+            }
+        }
+        .box {
+            width: 70%;
         }
     }
 }
@@ -822,7 +949,7 @@ h1 {
 
 
 // ------------------
-// .about-text
+// .about-text         Виды работ:
 // ------------------
 .about-text {
     display: flex;
@@ -876,8 +1003,12 @@ h1 {
         position: relative;
         h1 {
             position: absolute;
-            top: 80px;
+            top: 60px;
             // left: 50%;
+            background: $white;
+            color: $dark;
+            padding: 5px 10px;
+            border-radius: 5px;
         }
         h3 {
             text-align: center;
@@ -896,8 +1027,21 @@ h1 {
             display: block;
         }
     }
+    .image4 {
+        width: 150px;
+        position: absolute;
+        bottom: 10px;
+        right: 50px;
+    }
 }
-@media (max-width: 700px) {    
+@media (max-width: 800px) {
+    .about-text {
+        .image4 {
+            width: 100px;
+        }
+    }
+}
+@media (max-width: 700px) {
     .about-text {
         .box {            
             #text1 {
@@ -936,6 +1080,16 @@ h1 {
         }
         .arrow-right {    
             display: block;
+        }
+        .image4 {
+            bottom: 50px;
+        }
+    }
+}
+@media (max-width: 350px) {
+    .about-text {
+        .image4 {
+            bottom: 30px;
         }
     }
 }
