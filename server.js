@@ -1,11 +1,13 @@
 const fs = require("fs");
 
-let GEO_SMTP_USER
+let GEO_SMTP_USER;
 let GEO_SMTP_PASS;
+let GEO_SMTP_TO;
 try {
     const data = fs.readFileSync("env.json");
     GEO_SMTP_USER = JSON.parse(data).GEO_SMTP_USER;
     GEO_SMTP_PASS = JSON.parse(data).GEO_SMTP_PASS;
+    GEO_SMTP_TO = JSON.parse(data).GEO_SMTP_TO;
 } catch (err) {
     console.error(err)
 }
@@ -16,6 +18,7 @@ var	host = process.env.HOST || "0.0.0.0";
 let user = GEO_SMTP_USER || process.env.GEO_SMTP_USER;
 // let user;
 let pass = GEO_SMTP_PASS || process.env.GEO_SMTP_PASS;
+let to = GEO_SMTP_TO || process.env.GEO_SMTP_TO;
 
 const nodemailer = require('nodemailer');
 
@@ -29,7 +32,7 @@ express().use(express.static('dist'))
             if ((req.query.phone) && (req.query.phone != "")) {
                 let message = "<h2>Клиенту требуется консультация: <br><br><center>Имя: " + req.query.name + "<br><br>Тел: " + req.query.phone;
                 if ((req.query.email) && (req.query.email != "")) message += "<br><br>Почта: " + req.query.email;
-                response = smtp('ya13th@mail.ru', 'Запрос клиента с сайта https://geometrix61.ru', message +'</center></h2>');
+                response = smtp(to, 'Запрос клиента с сайта https://geometrix61.ru', message +'</center></h2>');
                 response.then(
                     resolve => { // Promis « выполнен успешно » но это не значит что сообщение доставлено
                         console.log("resolve: ", resolve);
