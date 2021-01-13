@@ -207,6 +207,17 @@ h1 {
         }
     }
 }
+@media (max-width: 350px) {
+    .header {
+        .logo-mini {
+            width: 80px;
+            // left: 10px;
+        }
+        .email, .phone, .whatsapp {
+            font-size: 1.3rem;
+        }
+    }
+}
 
 // высота
 @media (max-height: 700px) {
@@ -415,6 +426,22 @@ h1 {
                 padding: 15px;
                 margin: 15px 15px 0 15px;
             }
+        }
+    }
+}
+@media (max-width: 350px) {
+    .consultation {
+        .form {
+            width: 200px;
+            height: 370px;
+            input, button {
+                padding: 5px;
+                margin: 15px 5px 0 5px;
+            }
+        }
+        .instrument {
+            width: 250px;
+            left: 0;
         }
     }
 }
@@ -734,7 +761,7 @@ h1 {
         }
     }
 }
-@media (max-width: 300px) {
+@media (max-width: 350px) {
     .about-photo .container {
         // height: 400px;  
         .card {
@@ -746,10 +773,12 @@ h1 {
                     font-size: 1.2em;
                 }
             }
+            .face .content img {
+                width: 250px;
+            }
         }
     }
 }
-
 //----------------------------------
 
 
