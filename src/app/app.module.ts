@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { CertificateComponent } from './certificate/certificate.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { PrivacyComponent } from './privacy/privacy.component';
     AppComponent,
     LandingComponent,
     PageNotFoundComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    CertificateComponent
   ],
   imports: [
     BrowserModule,

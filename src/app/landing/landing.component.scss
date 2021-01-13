@@ -10,7 +10,7 @@ $dark: rgb(47,69,91);
 $white: white;
 $height-header: 150px;
 $height-header-min: 100px;
-$height-footer: 200px;
+$height-footer: 350px;
 $height-block: 800px;
 $z-index-header: 10;
 
@@ -836,7 +836,6 @@ h1 {
         }
     }
 }
-
 @media (max-width: 650px) {
     .reason {
         .reason-img-one {
@@ -886,14 +885,6 @@ h1 {
 @media (max-width: 350px) {
     .reason {
         height: 700px;
-        h1 {
-            // line-height: 1.5rem;
-        }
-        .reason-img-two {
-            img {
-                // width: 80px;
-            }
-        }
     }
 }
 @media (min-width: 1000px) {
@@ -962,44 +953,12 @@ h1 {
 
     position: relative;
 
-    .arrow-left {
-        z-index: 2;
-        position: absolute;
-        top: 40%;
-        left: 0;
-        opacity: 0.5;
-
-        display: none;
-
-        img {
-            width: 50px;
-            cursor: pointer;
-        }        
-    }
-    .arrow-right {
-        z-index: 2;
-        position: absolute;
-        top: 40%;
-        right: 0;
-        opacity: 0.5;
-
-        display: none;
-
-        img {
-            width: 50px;
-            cursor: pointer;
-        }        
-    }
-
     .box {
         display: flex;
         align-items: center;
         justify-content: center;
-
         padding: 20px;
-
-        // height: $height-block;
-        
+        // height: $height-block;        
         position: relative;
         h1 {
             position: absolute;
@@ -1026,15 +985,78 @@ h1 {
         #text3 {
             display: block;
         }
+        #text4 {
+            display: block;
+        }
     }
+    .arrow-left {
+        z-index: 2;
+        position: absolute;
+        top: 40%;
+        left: 0;
+        opacity: 0.5;
+
+        display: none;
+
+        img {
+            width: 50px;
+            cursor: pointer;
+        }        
+    }
+    .arrow-right {
+        z-index: 2;
+        position: absolute;
+        top: 40%;
+        right: 0;
+        opacity: 0.5;
+        display: none;
+        img {
+            width: 50px;
+            cursor: pointer;
+        }        
+    }    
     .image4 {
-        width: 150px;
+        width: 120px;
         position: absolute;
         bottom: 10px;
         right: 50px;
     }
 }
-@media (max-width: 800px) {
+@media (min-width: 1051px) { // >= 1051
+    .about-text {
+        .box {
+            width: 95%;
+            #text1, #text2, #text3, #text4 {
+                width: 25%;
+                // height: 50px;
+            }
+        }
+    }
+}
+@media (max-width: 1050px) { // <= 1050
+    .about-text {
+        .box {
+            width: 90%;
+            #text1, #text2, #text3, #text4{
+                width: 33%;
+                // height: 50px;
+            }
+            #text4 {
+                display: none;
+            }
+        }
+        .image4 {
+            width: 100px;
+        }
+        .arrow-left {    
+            display: block;
+        }
+        .arrow-right {    
+            display: block;
+        }
+    }
+}
+@media (max-width: 800px) { // < 800
     .about-text {
         .image4 {
             width: 100px;
@@ -1043,13 +1065,17 @@ h1 {
 }
 @media (max-width: 700px) {
     .about-text {
-        .box {            
-            #text1 {
-                display: block;
+        .box {
+            #text1, #text2, #text3, #text4{
+                width: 50%;
+                // height: 50px;
             }
-            #text2 {
-                display: block;
-            }
+            // #text1 {
+            //     display: block;
+            // }
+            // #text2 {
+            //     display: block;
+            // }
             #text3 {
                 display: none;
             }
@@ -1062,18 +1088,22 @@ h1 {
         }
     }
 }
-@media (max-width: 525px) {
+@media (max-width: 600px) {
     .about-text {
         .box {
-            #text1 {
-                display: block;
-            }    
+            #text1, #text2, #text3, #text4{
+                width: 90%;
+                // height: 50px;
+            }
+            // #text1 {
+            //     display: block;
+            // }    
             #text2 {
                 display: none;
             }            
-            #text3 {
-                display: none;
-            }            
+            // #text3 {
+            //     display: none;
+            // }
         }
         .arrow-left {    
             display: block;
@@ -1088,15 +1118,14 @@ h1 {
 }
 @media (max-width: 350px) {
     .about-text {
+        .box {
+            #text1, #text2, #text3, #text4{
+                width: 100%;
+                // height: 50px;
+            }
+        }
         .image4 {
             bottom: 30px;
-        }
-    }
-}
-@media (min-width: 1000px) {
-    .about-text {
-        .box {
-            width: 80%;
         }
     }
 }
@@ -1170,9 +1199,24 @@ h1 {
         top: 10px;
         // padding: 10px;
     }
+    .certificate {
+        position: absolute;
+        left: 20px;
+        bottom: 50px;
+        padding: 0 20px;
+        text-align: center;
+    }
     .privacy {
         position: absolute;
         bottom: 15px;
         right: 20px;
+    }
+}
+@media (min-width: 1000px) {
+    .footer {
+        .certificate {
+            // width: 70%;
+            padding: 0 150px;
+        }
     }
 }
