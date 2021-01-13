@@ -86,5 +86,5 @@ async function smtp(email, subject, message) {
         console.log("exception: ", e);
         response = "error";
     }
-    return response;
+    return response; 
 };
