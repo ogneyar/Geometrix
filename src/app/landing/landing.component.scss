@@ -1244,39 +1244,68 @@ h1 {
     height: $height-footer;
     position: relative;
     width: 100%;
-    .director {
-        position: absolute;
-        left: 20px;
-        top: 10px;
-        // padding: 10px;
-    }
-    .certificate {
-        position: absolute;
-        left: 20px;
-        bottom: 50px;
-        padding: 0 20px;
-        text-align: center;
-    }
-    .privacy {
-        position: absolute;
-        bottom: 15px;
-        right: 20px;
-    }
+    // .box {
+        // position: relative;
+        width: 100%;
+        .director {
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            // padding: 10px;
+        }
+        .certificate {
+            position: absolute;
+            left: 20px;
+            bottom: 50px;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .privacy {
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+        }
+        .social {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            text-align: right;
+        }
+    // }
 }
 @media (min-width: 1000px) {
     .footer {
-        .certificate {
+
+        .certificate, .director, .social, .privacy {
             // width: 70%;
             padding: 0 150px;
+        }
+        .box {
+            // padding: 0 150px;
+        }
+    }
+}
+@media (max-width: 370px) {
+    .footer {
+        height: 450px;
+        .certificate {
+            // width: 70%;
+            padding: 0 10px;
+        }
+        .social {
+            top: 140px;
         }
     }
 }
 @media (max-width: 300px) {
     .footer {
-        height: 450px;
+        height: 500px;
         .certificate {
             // width: 70%;
             // padding: 0 150px;
+        }
+        .social {
+            top: 150px;
         }
     }
 }
