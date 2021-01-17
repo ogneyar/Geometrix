@@ -266,4 +266,10 @@ export class LandingComponent implements OnInit {
     this.arrowFourButtons("right");
   }
 
+
+  onClickDivHutoryanin() {
+    // console.log("click");
+    window.location.href = 'https://hutoryanin.ru';
+  }
+
 }

@@ -1256,13 +1256,13 @@ h1 {
         .certificate {
             position: absolute;
             left: 20px;
-            bottom: 50px;
+            bottom: 60px;
             padding: 0 20px;
             text-align: center;
         }
         .privacy {
             position: absolute;
-            bottom: 15px;
+            bottom: 35px;
             right: 20px;
         }
         .social {
@@ -1271,25 +1271,33 @@ h1 {
             right: 20px;
             text-align: right;
         }
+        .hutoryanin {
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            // text-align: center;  
+            color: $dark;
+            border: 1px solid $dark;
+            border-radius: 2px;
+            padding: 0 2px;
+            cursor: pointer;
+        }
     // }
 }
 @media (min-width: 1000px) {
     .footer {
-
         .certificate, .director, .social, .privacy {
-            // width: 70%;
             padding: 0 150px;
         }
-        .box {
-            // padding: 0 150px;
-        }
+        .hutoryanin {
+            left: 170px;
+        }        
     }
 }
 @media (max-width: 370px) {
     .footer {
         height: 450px;
         .certificate {
-            // width: 70%;
             padding: 0 10px;
         }
         .social {
@@ -1300,10 +1308,6 @@ h1 {
 @media (max-width: 300px) {
     .footer {
         height: 500px;
-        .certificate {
-            // width: 70%;
-            // padding: 0 150px;
-        }
         .social {
             top: 150px;
         }
