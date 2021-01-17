@@ -1252,6 +1252,9 @@ h1 {
             left: 20px;
             top: 10px;
             // padding: 10px;
+            h4 {
+                color: $dark;
+            }
         }
         .certificate {
             position: absolute;
@@ -1270,6 +1273,20 @@ h1 {
             top: 10px;
             right: 20px;
             text-align: right;
+            line-height: 1.5rem;
+            a {
+                color: white;
+                padding: 1px 4px;
+                border-radius: 8px;
+            }
+            #insta {
+                border: 1px solid violet;
+                background: violet;
+            }
+            #vk {
+                border: 1px solid blue;
+                background: blue;        
+            }
         }
         .hutoryanin {
             position: absolute;
