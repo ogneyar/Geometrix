@@ -44,7 +44,7 @@ export class LandingComponent implements OnInit {
         Validators.maxLength(20)
       ]),
       email: new FormControl('', [
-        Validators.maxLength(20),
+        Validators.maxLength(40),
         forbiddenNameValidator(/http/i),
         forbiddenNameValidator(/www/i)
       ])
