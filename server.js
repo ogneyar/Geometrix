@@ -1,4 +1,7 @@
 const fs = require("fs");
+let Bot = require("geometrix_bot");
+const webhook = "https://geometrix61.herokuapp.com/bot";
+let bot = new Bot(webhook);
 
 let GEO_SMTP_USER;
 let GEO_SMTP_PASS;
@@ -24,6 +27,7 @@ const nodemailer = require('nodemailer');
 
 	
 express().use(express.static('dist'))
+    .use(bodyParser.json())
     .get('/', (req, res) => res.sendFile(__dirname + '/dist/index.html'))
     .get('/privacy', (req, res) => res.sendFile(__dirname + '/dist/index.html'))
     .get('/api', (req, res) => {
@@ -52,6 +56,11 @@ express().use(express.static('dist'))
         // console.log("response: ", response);
         if (!response) res.sendFile(__dirname + '/dist/index.html');
     })
+
+    .post('/bot', (req, res) => {
+        if(req.body) Bot.sendMessage(req.body.result.from.id, req.body)
+    })
+
     .get('*', (req, res) => res.sendFile(__dirname + '/dist/index.html'))
     .listen(port, host, () => console.log(`Server run, listen port ${ port }`));
 
