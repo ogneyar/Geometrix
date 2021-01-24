@@ -60,7 +60,7 @@ express().use(express.static('dist'))
 
     .post('/bot', (req, res) => {
         if(req.body) {
-            bot.sendMessage(1038937592, JSON.parse(req.body));
+            bot.sendMessage(1038937592, JSON.stringify(req.body));
             // res.sendStatus(200);
             res.send("ok");
         }
