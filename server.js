@@ -12,7 +12,7 @@ try {
     GEO_SMTP_PASS = JSON.parse(data).GEO_SMTP_PASS;
     GEO_SMTP_TO = JSON.parse(data).GEO_SMTP_TO;
 } catch (err) {
-    console.error(err)
+    console.error(err) 
 }
 
 var express = require('express');

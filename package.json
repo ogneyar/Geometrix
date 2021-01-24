@@ -21,7 +21,7 @@
     "@angular/router": "~11.0.1",
     "angular-ymaps": "^0.1.1",
     "express": "^4.17.1",
-    "geometrix_bot": "^1.0.3",
+    "geometrix_bot": "^1.0.4",
     "nodemailer": "^6.4.17",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
