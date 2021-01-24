@@ -58,11 +58,12 @@ express().use(express.static('dist'))
         if (!response) res.sendFile(__dirname + '/dist/index.html');
     })
 
-    .get('/bot', (req, res) => {
-        if(req.body) bot.sendMessage(1038937592, "Get  " + req.body)
-    })
     .post('/bot', (req, res) => {
-        if(req.body) bot.sendMessage(1038937592, "Post  " + req.body)
+        if(req.body) {
+            bot.sendMessage(1038937592, JSON.parse(req.body));
+            // res.sendStatus(200);
+            res.send("ok");
+        }
     })
 
     .get('*', (req, res) => res.sendFile(__dirname + '/dist/index.html'))
