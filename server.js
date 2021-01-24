@@ -1,4 +1,5 @@
 const fs = require("fs");
+const bodyParser = require("body-parser");
 let Bot = require("geometrix_bot");
 const webhook = "https://geometrix61.herokuapp.com/bot";
 let bot = new Bot(webhook);
@@ -58,10 +59,10 @@ express().use(express.static('dist'))
     })
 
     .get('/bot', (req, res) => {
-        if(req.body) Bot.sendMessage(1038937592, req.body)
+        if(req.body) bot.sendMessage(1038937592, "Get  " + req.body)
     })
     .post('/bot', (req, res) => {
-        if(req.body) Bot.sendMessage(1038937592, "Post  " + req.body)
+        if(req.body) bot.sendMessage(1038937592, "Post  " + req.body)
     })
 
     .get('*', (req, res) => res.sendFile(__dirname + '/dist/index.html'))
