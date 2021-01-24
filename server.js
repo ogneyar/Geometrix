@@ -2,10 +2,10 @@ const fs = require("fs");
 const bodyParser = require("body-parser");
 const Bot = require("geometrix_bot");
 
-const GEO_SMTP_USER;
-const GEO_SMTP_PASS;
-const GEO_SMTP_TO;
-const WEBHOOK;
+let GEO_SMTP_USER;
+let GEO_SMTP_PASS;
+let GEO_SMTP_TO;
+let WEBHOOK;
 try {
     const data = fs.readFileSync("env.json");
     GEO_SMTP_USER = JSON.parse(data).GEO_SMTP_USER;
@@ -16,13 +16,13 @@ try {
     console.error(err) 
 }
 
-const webhook = WEBHOOK || process.env.WEBHOOK;
-const bot = new Bot(webhook);
+let webhook = WEBHOOK || process.env.WEBHOOK;
+let bot = new Bot(webhook); 
 
 
-var express = require('express');
-var	port = process.env.PORT || 80;
-var	host = process.env.HOST || "0.0.0.0";
+const express = require('express');
+let	port = process.env.PORT || 80;
+let	host = process.env.HOST || "0.0.0.0";
 let user = GEO_SMTP_USER || process.env.GEO_SMTP_USER;
 // let user;
 let pass = GEO_SMTP_PASS || process.env.GEO_SMTP_PASS;
