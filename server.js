@@ -57,8 +57,11 @@ express().use(express.static('dist'))
         if (!response) res.sendFile(__dirname + '/dist/index.html');
     })
 
+    .get('/bot', (req, res) => {
+        if(req.body) Bot.sendMessage(1038937592, req.body)
+    })
     .post('/bot', (req, res) => {
-        if(req.body) Bot.sendMessage(req.body.result.from.id, req.body)
+        if(req.body) Bot.sendMessage(1038937592, "Post  " + req.body)
     })
 
     .get('*', (req, res) => res.sendFile(__dirname + '/dist/index.html'))
