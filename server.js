@@ -85,8 +85,8 @@ express().use(express.static('dist'))
             }else if (text == "/zakupki" || text == "Показать закупки") {
 
                 bot.sendMessage(from_id, `bot.zakupki();`, "markdown");
-                // console.log(bot.zakupki());
-                bot.sendMessage(from_id, "hz "+bot.zakupki(), "markdown");
+                console.log(bot.zakupki());
+                bot.sendMessage(from_id, "hz", "markdown");
 
             }else {
                 console.log(text);
