@@ -46,14 +46,10 @@ express().use(express.static('dist'))
                     resolve => { // Promis « выполнен успешно » но это не значит что сообщение доставлено
                         console.log("resolve: ", resolve);
                         res.send(resolve); // может быть ОК и ERROR
-
-                        // res.sendFile(__dirname + '/dist/index.html');
                     },
                     reject => { // « выполнен с ошибкой »
                         console.log("reject: ", reject);
                         res.send(reject);
-
-                        // res.sendFile(__dirname + '/dist/index.html');
                     }
                 );
             }
