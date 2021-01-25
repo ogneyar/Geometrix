@@ -83,8 +83,10 @@ express().use(express.static('dist'))
             if (text == "/start") {
                 bot.sendMessage(from_id, "Приветствую!\n\nНажми кнопку ниже или пришли команду /zakupki", "markdown", ReplyKeyboardMarkup);
             }else if (text == "/zakupki" || text == "Показать закупки") {
-
+                
+                bot.sendMessage(from_id, `bot.zakupki();`, "markdown");
                 bot.zakupki();
+                bot.sendMessage(from_id, `bot.zakupki();`, "markdown");
 
             }else {
                 console.log(text);
