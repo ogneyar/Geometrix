@@ -67,7 +67,6 @@ express().use(express.static('dist'))
             let message = result.message;
             let text = message.text;
             let from_id = message.from.id;
-            // let url = "";
 
             let ReplyKeyboardMarkup = {
                 'keyboard':[
@@ -78,14 +77,10 @@ express().use(express.static('dist'))
                 'resize_keyboard':true
             }
 
-            // if (text == "/start") bot.sendMessage(from_id, "Приветствую!");
-
             if (text == "/start") {
-                bot.sendMessage(from_id, "Приветствую!\n\nНажми кнопку ниже или пришли команду /zakupki", "markdown", ReplyKeyboardMarkup);
+                bot.sendMessage(from_id, "Здравствуй!\n\nНажми кнопку ниже или пришли команду /zakupki", "markdown", ReplyKeyboardMarkup);
             }else if (text == "/zakupki" || text == "Показать закупки") {
 
-                bot.sendMessage(from_id, `bot.zakupki();`, "markdown");
-                // bot.zakupki().then(a => bot.sendMessage(from_id, "hz " + JSON.stringify(a), "markdown"));                
                 bot.zakupki(from_id);
 
             }else {
