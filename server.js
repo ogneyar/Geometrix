@@ -1,40 +1,40 @@
 const fs = require("fs");
 const bodyParser = require("body-parser");
 const Bot = require("geometrix_bot");
+const express = require('express');
+const nodemailer = require('nodemailer');
 
 let GEO_SMTP_USER;
 let GEO_SMTP_PASS;
 let GEO_SMTP_TO;
+let BOT_TOKEN;
 let WEBHOOK;
 try {
     const data = fs.readFileSync("env.json");
     GEO_SMTP_USER = JSON.parse(data).GEO_SMTP_USER;
     GEO_SMTP_PASS = JSON.parse(data).GEO_SMTP_PASS;
     GEO_SMTP_TO = JSON.parse(data).GEO_SMTP_TO;
+    BOT_TOKEN = JSON.parse(data).BOT_TOKEN;
     WEBHOOK = JSON.parse(data).WEBHOOK;
 } catch (err) {
     console.error(err) 
 }
+const bot_token = BOT_TOKEN || process.env.BOT_TOKEN;
+const webhook = WEBHOOK || process.env.WEBHOOK;
+let bot = new Bot(bot_token, webhook);
 
-let webhook = WEBHOOK || process.env.WEBHOOK;
-let bot = new Bot(webhook); 
-
-
-const express = require('express');
 let	port = process.env.PORT || 80;
 let	host = process.env.HOST || "0.0.0.0";
 let user = GEO_SMTP_USER || process.env.GEO_SMTP_USER;
-// let user;
 let pass = GEO_SMTP_PASS || process.env.GEO_SMTP_PASS;
 let to = GEO_SMTP_TO || process.env.GEO_SMTP_TO;
-
-const nodemailer = require('nodemailer');
 
 	
 express().use(express.static('dist'))
     .use(bodyParser.json())
     .get('/', (req, res) => res.sendFile(__dirname + '/dist/index.html'))
     .get('/privacy', (req, res) => res.sendFile(__dirname + '/dist/index.html'))
+
     .get('/api', (req, res) => {
         let response;
         if ((req.query.name) && (req.query.name != "")) {
